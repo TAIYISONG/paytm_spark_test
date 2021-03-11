@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     # -------- Q1 -------------
     # 1. check the length for 'YEARMODA' col, turn out to be all 8 digit or missing
-    print('unique value of col YEARMODA: 'df_cntry_stn_wea.withColumn('len', F.length(df_cntry_stn_wea['YEARMODA'])).select('len').distinct().collect())
+    print('unique value of col YEARMODA: ', df_cntry_stn_wea.withColumn('len', F.length(df_cntry_stn_wea['YEARMODA'])).select('len').distinct().collect())
     print()
     # 2. convert 'YEARMODA' type to string and get year from the string
     df_cntry_stn_wea = df_cntry_stn_wea.withColumn('YEARMODA', df_cntry_stn_wea['YEARMODA'].cast(StringType()))
